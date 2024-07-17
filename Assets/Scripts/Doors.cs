@@ -69,18 +69,12 @@ public class Doors : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     internal int GetBonusAmount(float x)
     {
         return x > 0 ? rightAmount : leftAmount;
     }
 
-    internal BonusType DetBonusType(float x)
+    internal BonusType GetBonusType(float x)
     {
         return x > 0 ? rightBonus : leftBonus;
     }

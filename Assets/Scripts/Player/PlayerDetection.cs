@@ -1,3 +1,4 @@
+
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -24,7 +25,7 @@ public class PlayerDetection : MonoBehaviour
             if (collider.TryGetComponent(out Doors doors))
             {
                 int bonusAmount = doors.GetBonusAmount(transform.position.x);
-                BonusType bonusType = doors.DetBonusType(transform.position.x);
+                BonusType bonusType = doors.GetBonusType(transform.position.x);
                 doors.Disable();
                 onDoorHit?.Invoke();
                 crowdSystem.ApplyBonus(bonusAmount, bonusType);
@@ -40,6 +41,10 @@ public class PlayerDetection : MonoBehaviour
                 SoundManager.Instance.PlayDoorHitSound();
                 Destroy(collider.gameObject);
                 DataManager.Instance.AddCoins(1);
+            }
+            else if (collider.CompareTag("Abyss"))
+            {
+                crowdSystem.ApplyBonus(1, BonusType.Difference);
             }
         }
     }

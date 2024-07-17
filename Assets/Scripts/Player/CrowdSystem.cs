@@ -20,7 +20,7 @@ public class CrowdSystem : MonoBehaviour
             GameManager.Instance.SetGameState(GameManager.GameState.Gameover);
     }
 
-    private void PlaceRunners()
+    public void PlaceRunners()
     {
         for (int i = 0; i < runnersParent.childCount; i++)
         {
@@ -68,19 +68,25 @@ public class CrowdSystem : MonoBehaviour
         {
             Instantiate(runnersPrefab, runnersParent);
         }
-        playAnimator.Run();
+        if (GameManager.Instance.IsGameState()) playAnimator.Run();
     }
 
     private void RemoveRunners(int bonusAmount)
     {
         if (bonusAmount > runnersParent.childCount)
             bonusAmount = runnersParent.childCount;
+
         int runnersAmount = runnersParent.childCount;
-        for (int i = runnersAmount - 1; i > runnersAmount - bonusAmount; i--)
+        int i = runnersAmount - 1;
+        int runnersToRemove = bonusAmount;
+
+        while (runnersToRemove > 0 && i >= 0)
         {
             Transform runnerDestroy = runnersParent.GetChild(i);
             runnerDestroy.SetParent(null);
             Destroy(runnerDestroy.gameObject);
+            i--;
+            runnersToRemove--;
         }
     }
 }

@@ -6,6 +6,7 @@ public class ChunkManager : MonoBehaviour
 {
     public static ChunkManager Instance;
     public LevelSO[] levels;
+    public CrowdSystem crowdSystem;
 
     private GameObject finishLine;
 
@@ -29,14 +30,18 @@ public class ChunkManager : MonoBehaviour
 
     private void GenerateLevel()
     {
+        //Generate Chunks
         int currentLevel = GetLevel() - 1;
         LevelSO level = levels[currentLevel];
         CreateLevel(level.chunks);
+        //Generate Players
+        crowdSystem.ApplyBonus((currentLevel + 1) * 2, BonusType.Addition);
+        crowdSystem.PlaceRunners();
     }
 
     private void CreateLevel(Chunk[] levelChunks)
     {
-        Vector3 chunkPosition = new(0, -5, 0);
+        Vector3 chunkPosition = new(0, 5, 0);
         for (int i = 0; i < levelChunks.Length; i++)
         {
             Chunk chunkToCreate = levelChunks[i];
