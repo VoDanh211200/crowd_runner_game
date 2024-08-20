@@ -231,7 +231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +10
+  m_text: +0
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7863806704766442b3702bbb9c23aca, type: 2}
   m_sharedMaterial: {fileID: 4408061323145317756, guid: c7863806704766442b3702bbb9c23aca, type: 2}
@@ -258,8 +258,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -377,7 +377,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea08459904b15e54887a99337babba27, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.68235296}
+  m_Color: {r: 0.3160377, g: 0.6354985, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -659,7 +659,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ea08459904b15e54887a99337babba27, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.68235296}
+  m_Color: {r: 0.3160377, g: 0.6354985, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -720,12 +720,12 @@ MonoBehaviour:
   leftDoorRender: {fileID: 1998857772528052518}
   rightDoorText: {fileID: 1998857771711859519}
   leftDoorText: {fileID: 1998857773397885914}
-  rightAmount: 10
-  leftAmount: 2
+  rightAmount: 0
+  leftAmount: 3
   bonusColor: {r: 0.3160377, g: 0.6354985, b: 1, a: 1}
   penaltyColor: {r: 1, g: 0.051886797, b: 0.051886797, a: 1}
   collider: {fileID: 1998857772607632071}
-  rightBonus: 1
+  rightBonus: 0
   leftBonus: 2
 --- !u!65 &1998857772607632071
 BoxCollider:
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: +10
+  m_text: x3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c7863806704766442b3702bbb9c23aca, type: 2}
   m_sharedMaterial: {fileID: 4408061323145317756, guid: c7863806704766442b3702bbb9c23aca, type: 2}
@@ -965,8 +965,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 20
-  m_fontSizeBase: 20
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1057,6 +1057,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   size: {x: 10, y: 10, z: 20}
+  getLevelSO: 
+  doors: {fileID: 1998857772607632064}
+  enemy: {fileID: 0}
 --- !u!1 &2298625638692235518
 GameObject:
   m_ObjectHideFlags: 0

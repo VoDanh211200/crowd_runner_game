@@ -7,4 +7,5 @@ using UnityEngine;
 public class LevelSO : ScriptableObject
 {
     public Chunk[] chunks;
+    public string[] setup;
 }

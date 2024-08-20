@@ -7,28 +7,6 @@ public class PlayAnimator : MonoBehaviour
 {
 
     public Transform runnersParent;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    internal void Idle()
-    {
-        for (int i = 0; i < runnersParent.childCount; i++)
-        {
-            Transform child = runnersParent.GetChild(i);
-            Animator animator = child.GetComponent<Animator>();
-            animator.Play("Idle");
-        }
-    }
 
     internal void Run()
     {
@@ -37,6 +15,16 @@ public class PlayAnimator : MonoBehaviour
             Transform child = runnersParent.GetChild(i);
             Animator animator = child.GetComponent<Animator>();
             animator.Play("Fast Run");
+        }
+    }
+
+    internal void Dancing()
+    {
+        for (int i = 0; i < runnersParent.childCount; i++)
+        {
+            Transform child = runnersParent.GetChild(i);
+            Animator animator = child.GetComponent<Animator>();
+            animator.Play("Hip Hop Dancing");
         }
     }
 }

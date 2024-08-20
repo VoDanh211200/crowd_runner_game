@@ -41,7 +41,7 @@ public class PlayerController : MonoBehaviour
     private void GameStateChangeCallback(GameManager.GameState state)
     {
         if (state == GameManager.GameState.Game) StartMoving();
-        else if (state == GameManager.GameState.Gameover || state == GameManager.GameState.LevelComplete) StopMoving();
+        else if (state == GameManager.GameState.Gameover || state == GameManager.GameState.LevelComplete) StopMoving(state);
     }
 
     void Update()
@@ -59,10 +59,11 @@ public class PlayerController : MonoBehaviour
         playAnimator.Run();
     }
 
-    private void StopMoving()
+    private void StopMoving(GameManager.GameState state)
     {
         canMove = false;
-        playAnimator.Idle();
+        if (state == GameManager.GameState.LevelComplete)
+            playAnimator.Dancing();
     }
 
     private void MoveForward()

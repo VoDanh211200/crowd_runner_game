@@ -17,9 +17,8 @@ public class Doors : MonoBehaviour
     public Color bonusColor;
     public Color penaltyColor;
     public Collider collider;
-
-    [SerializeField] private BonusType rightBonus;
-    [SerializeField] private BonusType leftBonus;
+    public BonusType rightBonus;
+    public BonusType leftBonus;
 
     void Start()
     {
