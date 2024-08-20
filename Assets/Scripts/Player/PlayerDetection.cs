@@ -42,7 +42,7 @@ public class PlayerDetection : MonoBehaviour
                 Destroy(collider.gameObject);
                 DataManager.Instance.AddCoins(1);
             }
-            else if (collider.CompareTag("Abyss"))
+            else if (collider.CompareTag("Abyss") || collider.CompareTag("Cactus"))
             {
                 crowdSystem.ApplyBonus(1, BonusType.Difference);
             }

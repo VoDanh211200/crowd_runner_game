@@ -34,7 +34,10 @@ public class SoundManager : MonoBehaviour
 
     private void PlayRunnerDieSound()
     {
-        runnerDieSound.Play();
+        if (runnerDieSound != null)
+        {
+            runnerDieSound.Play();
+        }
     }
 
     private void OnDestroy()

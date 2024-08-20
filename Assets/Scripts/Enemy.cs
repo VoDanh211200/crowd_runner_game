@@ -40,7 +40,13 @@ public class Enemy : MonoBehaviour
 
     private void RunTowardsTarget()
     {
-        if (targetRunner == null) return;
+        //case targetRunner is destroyed
+        if (targetRunner == null) 
+        {
+            state = State.Idle;
+            return;
+        }
+
         transform.position = Vector3.MoveTowards(transform.position, targetRunner.position, moveSpeed * Time.deltaTime);
         if (Vector3.Distance(transform.position, targetRunner.position) < .1f)
         {
