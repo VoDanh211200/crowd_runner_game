@@ -16,14 +16,4 @@ public class Runner : MonoBehaviour
     {
         isTarget = true;
     }
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 }

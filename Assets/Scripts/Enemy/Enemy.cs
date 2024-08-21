@@ -40,10 +40,8 @@ public class Enemy : MonoBehaviour
 
     private void RunTowardsTarget()
     {
-        //case targetRunner is destroyed
         if (targetRunner == null) 
         {
-            state = State.Idle;
             return;
         }
 

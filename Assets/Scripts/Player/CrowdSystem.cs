@@ -6,11 +6,25 @@ using UnityEngine;
 
 public class CrowdSystem : MonoBehaviour
 {
+    public static CrowdSystem Instance;
+
     public float radius;
     public float angle;
     public Transform runnersParent;
     public GameObject runnersPrefab;
     public PlayAnimator playAnimator;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     void Update()
     {
@@ -87,6 +101,16 @@ public class CrowdSystem : MonoBehaviour
             Destroy(runnerDestroy.gameObject);
             i--;
             runnersToRemove--;
+        }
+    }
+
+    internal void OnEnemiesCleared()
+    {
+        // Reset isTarget
+        for (int i = 0; i < runnersParent.childCount; i++)
+        {
+            Runner runner = runnersParent.GetChild(i).GetComponent<Runner>();
+            runner.isTarget = false;
         }
     }
 }

@@ -10,6 +10,8 @@ public class EnemyGroup : MonoBehaviour
     public float radius;
     public float angle;
 
+    private bool enemiesCleared = false;
+
     void Start()
     {
         GenerateEnemies();
@@ -30,5 +32,19 @@ public class EnemyGroup : MonoBehaviour
         float x = radius * Mathf.Sqrt(i) * Mathf.Cos(Mathf.Deg2Rad * i * angle);
         float z = radius * Mathf.Sqrt(i) * Mathf.Sin(Mathf.Deg2Rad * i * angle);
         return new Vector3(x, 0, z);
+    }
+
+    private void CheckEnemyCount()
+    {
+        if (enemiesParent.childCount == 0 && !enemiesCleared)
+        {
+            enemiesCleared = true;
+            CrowdSystem.Instance.OnEnemiesCleared();
+        }
+    }
+
+    void Update()
+    {
+        CheckEnemyCount();
     }
 }
