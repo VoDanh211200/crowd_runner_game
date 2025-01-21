@@ -14,8 +14,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chunks:
   - {fileID: 2298625638551746563, guid: 314b7150ff1f22145b6e2d46abe68de0, type: 3}
+  - {fileID: 2298625638551746563, guid: 469542b96016e6642935e16f2c6c8f5b, type: 3}
+  - {fileID: 2298625638551746563, guid: b3215b1b0985bc44aa50645f0292455c, type: 3}
   - {fileID: 2298625638551746563, guid: f3fe2602c4587974e99227a656242ca2, type: 3}
-  - {fileID: 5646327422103410871, guid: b666f0f7e9d989f448e4aeef4f43c8f9, type: 3}
+  - {fileID: 2298625638551746563, guid: 469542b96016e6642935e16f2c6c8f5b, type: 3}
+  - {fileID: 2298625638551746563, guid: 74fdf610dc3b1a141b8a453d7f19fda2, type: 3}
   - {fileID: 2298625638551746563, guid: f3fe2602c4587974e99227a656242ca2, type: 3}
-  - {fileID: 5646327422103410871, guid: d28a0d1942549c545aa1e1fc5ef2a9a0, type: 3}
-  - {fileID: 3593953977158166614, guid: 0770c35b897a498479d6caac9ac507db, type: 3}
+  - {fileID: 2298625638551746563, guid: 469542b96016e6642935e16f2c6c8f5b, type: 3}
+  - {fileID: 2298625638551746563, guid: 27afa2644ca31214b865a2fadd98c6f6, type: 3}
+  - {fileID: 3593953977158166614, guid: 06c7a9d007a7d0c47ac4873191486575, type: 3}
+  setup:
+  - 
+  - +10 +4
+  - 
+  - 6
+  - /3 x4
+  - 
+  - 7
+  - +5 -10
+  - 
+  - 

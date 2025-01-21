@@ -25,13 +25,15 @@ public class ChunkManager : MonoBehaviour
     void Start()
     {
         GenerateLevel();
-        finishLine = GameObject.FindWithTag("Finish");
+        finishLine = GameObject.FindWithTag("Finish") != null ? 
+            GameObject.FindWithTag("Finish") : GameObject.FindWithTag("Gift");
     }
 
     private void GenerateLevel()
     {
         //Generate Chunks
         int currentLevel = GetLevel() - 1;
+        currentLevel = 2;
         CreateLevel(levels[currentLevel]);
         //Generate Players
         crowdSystem.ApplyBonus((currentLevel + 1) * 2, BonusType.Addition);
@@ -65,7 +67,7 @@ public class ChunkManager : MonoBehaviour
             Chunk chunkToCreate = level.chunks[i];
             if (i > 0) chunkPosition.z += chunkToCreate.GetLength() / 2;
             Chunk chunkInstance = Instantiate(chunkToCreate, chunkPosition, Quaternion.identity, transform);
-            chunkPosition.z += chunkInstance.GetLength() / 2;        
+            chunkPosition.z += chunkInstance.GetLength() / 2;
         }
     }
 

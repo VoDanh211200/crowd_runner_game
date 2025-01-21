@@ -10,6 +10,7 @@ public class PlayerDetection : MonoBehaviour
 
     public CrowdSystem crowdSystem;
     public static Action onDoorHit;
+    public GameObject wheel;
 
     void Update()
     {
@@ -41,6 +42,12 @@ public class PlayerDetection : MonoBehaviour
                 SoundManager.Instance.PlayDoorHitSound();
                 Destroy(collider.gameObject);
                 DataManager.Instance.AddCoins(1);
+            }
+            else if (collider.CompareTag("Gift"))
+            {
+                PlayerPrefs.SetInt("level", PlayerPrefs.GetInt("level") + 1);
+                wheel.SetActive(true);
+                GameManager.Instance.SetGameState(GameManager.GameState.LevelComplete);
             }
             else if (collider.CompareTag("Abyss") || collider.CompareTag("Cactus"))
             {

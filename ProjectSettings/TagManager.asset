@@ -7,6 +7,8 @@ TagManager:
   - Coin
   - Abyss
   - Cactus
+  - Water
+  - Gift
   layers:
   - Default
   - TransparentFX
