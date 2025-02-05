@@ -20,8 +20,19 @@ public class ShopManager : MonoBehaviour
 
     private void Start()
     {
+        RewardedAdsButton.onRewardedAdRewared += RewardPlayer;
         ConfigureButtons();
         UpdatePurchaseButton();
+    }
+
+    private void OnDestroy()
+    {
+        RewardedAdsButton.onRewardedAdRewared -= RewardPlayer;
+    }
+
+    private void RewardPlayer()
+    {
+        DataManager.Instance.AddCoins(10);
     }
 
     private void ConfigureButtons()

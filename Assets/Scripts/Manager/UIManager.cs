@@ -60,6 +60,7 @@ public class UIManager : MonoBehaviour
 
     public void RetryButtonReleased()
     {
+        InterstitialAd.Instance.ShowAd();
         SceneManager.LoadScene(0);
     }
 
