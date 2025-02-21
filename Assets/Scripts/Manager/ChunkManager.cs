@@ -33,7 +33,6 @@ public class ChunkManager : MonoBehaviour
     {
         //Generate Chunks
         int currentLevel = GetLevel() - 1;
-        currentLevel = 2;
         CreateLevel(levels[currentLevel]);
         //Generate Players
         crowdSystem.ApplyBonus((currentLevel + 1) * 2, BonusType.Addition);

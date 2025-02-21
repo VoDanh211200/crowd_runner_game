@@ -11,11 +11,12 @@ public class UIManager : MonoBehaviour
     public GameObject gamePanel;
     public GameObject gameOverPanel;
     public GameObject levelCompeletePanel;
+    public GameObject buttonGift;
     public GameObject settingsPanel;
     public GameObject shopPanel;
     public ShopManager shopManager;
     public Slider slider;
-    public Text levelText;
+    public Text levelText; 
 
     void Start()
     {
@@ -65,6 +66,7 @@ public class UIManager : MonoBehaviour
 
     public void ShowGameover()
     {
+        GoogleAdsManager.Instance.LoadBannerAd();
         gamePanel.SetActive(false);
         gameOverPanel.SetActive(true);
     }
@@ -72,6 +74,7 @@ public class UIManager : MonoBehaviour
     public void ShowGameCompelete()
     {
         gamePanel.SetActive(false);
+        buttonGift.SetActive(true);
         levelCompeletePanel.SetActive(true);
     }
 
